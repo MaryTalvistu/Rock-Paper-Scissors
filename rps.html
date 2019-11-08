@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>RockPaperScissors</title>
+    </head>
+
+    <body>
+        <script>
+
+            var playerScore = 0;
+            var computerScore = 0;
+            var gamesPlayed = 0;
+           
+            function computerPlay() {
+                const selection = ["rock", "paper", "scissors"]
+                return selection[Math.floor(Math.random() * 3)]
+            };
+        
+            function playerPlay() {
+                let answer = prompt("Which move will you make? Rock, paper, or scissors").toLowerCase();
+               
+                if (answer !== "rock" && answer !== "paper" && answer !== "scissors"){
+                    alert("You must select between rock, paper or scissors!");
+                    return playerPlay();
+                } else { 
+                    return answer;
+                }        
+            };
+            
+            function reset() {
+                gamesPlayed = 0;
+                return game();
+            }
+
+            function playRound(playerSelection, computerSelection) {
+                playerSelection = playerPlay()
+                computerSelection = computerPlay()
+
+                if (computerSelection === playerSelection) {
+                    console.log("It's a Tie! You both threw " + computerSelection + ".");
+                    gamesPlayed++;
+                } else if((computerSelection == "scissors" && playerSelection == "rock") || 
+                    (computerSelection == "paper" && playerSelection == "scissors") || 
+                    (computerSelection == "rock" && playerSelection == "paper")) {
+                    console.log("You Win! " + playerSelection.replace(/^[a-z]/, u => u.toUpperCase()) +
+                     " beats " + computerSelection + ".");
+                    gamesPlayed++;
+                    playerScore++;
+                } else {
+                    console.log("You Lose! " + computerSelection.replace(/^[a-z]/, u => u.toUpperCase()) +
+                     " beats " + playerSelection + ".");
+                    gamesPlayed++;
+                    computerScore++;
+                }   
+            };
+            
+            function game() {  
+                while(gamesPlayed < 5){
+                    playRound();
+                    console.log("Player: " + playerScore);
+                    console.log("Computer: " + computerScore);
+                }
+                
+                if((gamesPlayed = 5) && (playerScore > computerScore)){
+                    console.log("You just won the game!"); 
+                    console.log("Player final score: " + playerScore);
+                    console.log("Computer final score: " + computerScore);
+
+                } else if((gamesPlayed = 5) && (computerScore === playerScore)){
+                    console.log("It's a tie!");
+                    return reset();
+                } else {
+                    console.log("You just lost the game!");
+                    console.log("Player final score: " + playerScore);
+                    console.log("Computer final score: " + computerScore);
+                }
+            };
+
+            game();
+
+        </script>
+    </body>
+</html>
