@@ -1,83 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>RockPaperScissors</title>
+        <meta charset="utf-8">
+        <link href="style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+        <title>RockPaperScissors</title>
     </head>
 
     <body>
-        <script>
-
-            var playerScore = 0;
-            var computerScore = 0;
-            var gamesPlayed = 0;
-           
-            function computerPlay() {
-                const selection = ["rock", "paper", "scissors"]
-                return selection[Math.floor(Math.random() * 3)]
-            };
-        
-            function playerPlay() {
-                let answer = prompt("Which move will you make? Rock, paper, or scissors").toLowerCase();
-               
-                if (answer !== "rock" && answer !== "paper" && answer !== "scissors"){
-                    alert("You must select between rock, paper or scissors!");
-                    return playerPlay();
-                } else { 
-                    return answer;
-                }        
-            };
-            
-            function reset() {
-                gamesPlayed = 0;
-                return game();
-            }
-
-            function playRound(playerSelection, computerSelection) {
-                playerSelection = playerPlay()
-                computerSelection = computerPlay()
-
-                if (computerSelection === playerSelection) {
-                    console.log("It's a Tie! You both threw " + computerSelection + ".");
-                    gamesPlayed++;
-                } else if((computerSelection == "scissors" && playerSelection == "rock") || 
-                    (computerSelection == "paper" && playerSelection == "scissors") || 
-                    (computerSelection == "rock" && playerSelection == "paper")) {
-                    console.log("You Win! " + playerSelection.replace(/^[a-z]/, u => u.toUpperCase()) +
-                     " beats " + computerSelection + ".");
-                    gamesPlayed++;
-                    playerScore++;
-                } else {
-                    console.log("You Lose! " + computerSelection.replace(/^[a-z]/, u => u.toUpperCase()) +
-                     " beats " + playerSelection + ".");
-                    gamesPlayed++;
-                    computerScore++;
-                }   
-            };
-            
-            function game() {  
-                while(gamesPlayed < 5){
-                    playRound();
-                    console.log("Player: " + playerScore);
-                    console.log("Computer: " + computerScore);
-                }
-                
-                if((gamesPlayed = 5) && (playerScore > computerScore)){
-                    console.log("You just won the game!"); 
-                    console.log("Player final score: " + playerScore);
-                    console.log("Computer final score: " + computerScore);
-
-                } else if((gamesPlayed = 5) && (computerScore === playerScore)){
-                    console.log("It's a tie!");
-                    return reset();
-                } else {
-                    console.log("You just lost the game!");
-                    console.log("Player final score: " + playerScore);
-                    console.log("Computer final score: " + computerScore);
-                }
-            };
-
-            game();
-
-        </script>
+        <div class="content"></div>
+            <h1>Rock Paper Scissors</h1>
+            <h3 class="instructions">Make a move!</h3>
+            <div id="choices">
+               <img id="rock" src="./Images/rock.png" width="200" height="150" alt="Rock" />
+                <img id="paper" src="./Images/paper.png" width="200" height="150" alt="Paper" />
+                <img id="scissors" src="./Images/scissors.png" width="200" height="150" alt="Scissors" />
+            </div>
+            <h2 class="score"></h2>
+        </div>
+        <script src = "main.js"></script>
     </body>
 </html>

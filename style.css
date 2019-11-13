@@ -1,0 +1,40 @@
+body, html {
+    display: grid;
+    height: 100%;
+    margin: auto;
+  }
+  
+  body div {
+    margin: auto;
+  }
+
+ h1 {
+    text-align: center;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 90px;
+    color: darkolivegreen;
+    margin: auto;
+  }
+
+  h2 {
+    text-align: center;
+    font-family: 'Shadows Into Light', cursive;
+  }
+
+  h3 {
+    text-align: center;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 30px;
+    margin: auto;
+  }
+img {
+    padding: 10px;
+    margin: 30px;
+}
+img:hover {
+    cursor: pointer; 
+    transform:  scale(1.2);
+}
+img:active {
+    border: 3px solid orange;
+}

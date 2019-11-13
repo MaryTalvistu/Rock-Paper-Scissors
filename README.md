@@ -1,12 +1,10 @@
-This is a ROCK PAPER SCISSORS game implementation using javascript. The game is played entirely using console, and you need to open the rgs.html and Console to play it. 
+This is a ROCK PAPER SCISSORS game implementation using javascript. 
 
 How to Play
-
-There are 5 rounds in the game, and you can use window prompt to provide your input such as "rock", "paper" or "scissors". Please note that, the game is designed case insensitive and player can also input "ROCK", "roCK" or "Rock" or any other variation. 
-If the 5 rounds are tied, the game will continue another five rounds until the winner is certain.
+The game is played against the computer. Player has to choose between "rock", "paper" or "scissors" by clicking responding image. There are 5 rounds in the game. If a round results a tie, it is played again until somone wins it and gets a point. Whoever with more points after 5 rounds wins! To start again refresh the page.
 
 
 This assignment is part of The Odin Project - Web Development 101 curriculum.
 
 
-This is the first functional version and implemented on console.
+
