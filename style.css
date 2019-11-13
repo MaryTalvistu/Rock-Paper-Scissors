@@ -28,12 +28,13 @@ body, html {
     margin: auto;
   }
 img {
+  display: inline;
     padding: 10px;
     margin: 30px;
 }
 img:hover {
     cursor: pointer; 
-    transform:  scale(1.2);
+    transform: scale(1.2);
 }
 img:active {
     border: 3px solid orange;
