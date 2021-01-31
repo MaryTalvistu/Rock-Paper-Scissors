@@ -27,6 +27,10 @@ body, html {
     font-size: 30px;
     margin: auto;
   }
+
+  p {
+    font-family: 'Shadows Into Light', cursive;
+  }
 img {
   display: inline;
     padding: 10px;
