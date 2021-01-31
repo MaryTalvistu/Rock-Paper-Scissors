@@ -72,7 +72,7 @@ if (roundsPlayed < 4) {
 }else {
     if (playerScore !== computerScore) {
         if (playerScore > computerScore){
-            instructions.innerHTML = "GAME OVER - You just won the game!";
+            instructions.innerHTML = "GAME OVER - You just won the game!!!";
             score.innerHTML = "Player final score: " + playerScore + "<br>Computer final score: " + computerScore;
         }else {
             instructions.innerHTML = "GAME OVER - You just lost the game! ";
